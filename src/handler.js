@@ -1,6 +1,7 @@
 const { nanoid } = require('nanoid');
 const notes = require('./notes');
 
+// Fungsi menambahkan note baru
 const addNoteHandler = (request, h) => {
   const { title, tags, body} = request.payload;
 
@@ -36,6 +37,7 @@ const addNoteHandler = (request, h) => {
   return response;
 };
 
+// Fungsi mengambil semua data note
 const getAllNotesHandler = () => ({
   status: 'success',
   data: {
@@ -66,6 +68,7 @@ const getNoteByIdHandler = (request, h) => {
   return response;
 };
 
+// Fungsi edit data note berdasarkan id
 const editNoteByIdHandler = (request, h) => {
   const { id } = request.params;
  
@@ -97,6 +100,7 @@ const editNoteByIdHandler = (request, h) => {
   return response;
 };
 
+// Fungsi menghapus data note berdasarkan id
 const deleteNoteByIdHandler = (request, h) => {
   const { id } = request.params;
  
